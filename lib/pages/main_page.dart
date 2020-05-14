@@ -122,7 +122,7 @@ class _MainPageState extends State<MainPage> {
         fontSize: 11.0,
         letterSpacing: 0.5,
         fontWeight:
-            (_currentIndex == index) ? FontWeight.bold : FontWeight.normal,
+            (_currentIndex == index) ? FontWeight.w600 : FontWeight.normal,
       ),
     );
   }

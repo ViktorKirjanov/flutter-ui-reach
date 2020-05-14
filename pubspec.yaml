@@ -50,6 +50,10 @@ flutter:
    - assets/icons/navigation_management_not_active.png
    - assets/icons/navigation_profile_active.png
    - assets/icons/navigation_profile_not_active.png
+   - assets/icons/avatar.png
+   - assets/icons/completed.png
+   - assets/icons/processing.png
+   - assets/icons/failed.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -65,7 +69,12 @@ flutter:
   fonts:
     - family: Inter
       fonts:
-        - asset: assets/fonts/Inter-VariableFont_slnt,wght.ttf    
+        # - asset: assets/fonts/Inter-VariableFont_slnt,wght.ttf    
+        - asset: assets/fonts/Inter-Regular-slnt=0.ttf    
+        - asset: assets/fonts/Inter-SemiBold-slnt=0.ttf
+          weight: 600
+        - asset: assets/fonts/Inter-Bold-slnt=0.ttf   
+          weight: 800
   # fonts:
   #   - family: Schyler
   #     fonts:
