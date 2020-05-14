@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:login_and_dashboard/pages/init_page.dart';
+import 'package:login_and_dashboard/pages/main_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,8 +10,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        fontFamily: 'Inter',
       ),
-      home: InitPage(),
+      home: MainPage(),
     );
   }
 }
