@@ -57,6 +57,7 @@ class _MainPageState extends State<MainPage> {
         highlightColor: Colors.transparent,
       ),
       child: BottomNavigationBar(
+        backgroundColor: Colors.white,
         selectedFontSize: 11.0,
         unselectedFontSize: 11.0,
         type: BottomNavigationBarType.fixed,
