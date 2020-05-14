@@ -5,6 +5,7 @@ import 'package:login_and_dashboard/pages/home_page.dart';
 import 'package:login_and_dashboard/pages/management_page.dart';
 import 'package:login_and_dashboard/pages/profile_page.dart';
 import 'package:login_and_dashboard/pages/report_page.dart';
+import 'package:login_and_dashboard/colors.dart' as AppColors;
 
 class MainPage extends StatefulWidget {
   MainPage({Key key}) : super(key: key);
@@ -117,7 +118,7 @@ class _MainPageState extends State<MainPage> {
       title,
       style: TextStyle(
         color: (_currentIndex == index)
-            ? Color.fromRGBO(204, 61, 106, 1)
+            ? AppColors.mainSelectedColor
             : Color.fromRGBO(144, 141, 161, 1),
         fontSize: 11.0,
         letterSpacing: 0.5,
