@@ -71,6 +71,8 @@ flutter:
       fonts:
         # - asset: assets/fonts/Inter-VariableFont_slnt,wght.ttf    
         - asset: assets/fonts/Inter-Regular-slnt=0.ttf    
+        - asset: assets/fonts/Inter-Medium-slnt=0.ttf  
+          weight: 500  
         - asset: assets/fonts/Inter-SemiBold-slnt=0.ttf
           weight: 600
         - asset: assets/fonts/Inter-Bold-slnt=0.ttf   
