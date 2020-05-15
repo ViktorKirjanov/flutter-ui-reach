@@ -156,6 +156,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildTopUp() {
     return Container(
+      padding: EdgeInsets.all(14.0),
       height: 65.0,
       width: double.infinity,
       decoration: BoxDecoration(
@@ -163,6 +164,57 @@ class _HomePageState extends State<HomePage> {
         borderRadius: BorderRadius.all(
           Radius.circular(10.0),
         ),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Image.asset('assets/icons/logo.png'),
+          Row(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(left: 12.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      'Reach Credits',
+                      style: TextStyle(
+                        fontSize: 10.0,
+                        color: Color.fromRGBO(86, 81, 115, 1.0),
+                      ),
+                    ),
+                    SizedBox(height: 4.0),
+                    Text(
+                      '1113195',
+                      style: TextStyle(
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w600,
+                        color: Color.fromRGBO(41, 34, 84, 1.0),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          Spacer(),
+          Padding(
+            padding: const EdgeInsets.only(right: 20.0),
+            child: Container(
+              height: 24.0,
+              width: 1.0,
+              color: Color.fromRGBO(224, 222, 234, 1),
+            ),
+          ),
+          Text(
+            'Top up Credits',
+            style: TextStyle(
+              fontSize: 14.0,
+              fontWeight: FontWeight.w500,
+              color: Color.fromRGBO(204, 61, 106, 1),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -177,7 +229,7 @@ class _HomePageState extends State<HomePage> {
               'Statistic',
               style: TextStyle(
                 fontSize: 20.0,
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w600,
                 color: Color.fromRGBO(41, 34, 84, 1.0),
               ),
             ),
@@ -207,10 +259,9 @@ class _HomePageState extends State<HomePage> {
     List<Widget> queueItemlist = List<Widget>();
     queueList.forEach((QueueItem item) {
       queueItemlist.add(
-        _buildInkWellWrapper(
-          child: _buildQueueItemContent(item),
-        ),
+        _buildInkWellWrapper(child: _buildQueueItemContent(item)),
       );
+      queueItemlist.add(SizedBox(height: 10.0));
     });
 
     return Column(
@@ -222,7 +273,7 @@ class _HomePageState extends State<HomePage> {
               'Recent Queue',
               style: TextStyle(
                 fontSize: 20.0,
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w600,
                 color: Color.fromRGBO(41, 34, 84, 1.0),
               ),
             ),
@@ -246,7 +297,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildInkWellWrapper({@required Widget child}) {
     return Container(
-      margin: EdgeInsets.only(bottom: 10),
+      // margin: EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(
@@ -323,6 +374,7 @@ class _HomePageState extends State<HomePage> {
                       item.status.toShortString(),
                       style: TextStyle(
                         fontSize: 12.0,
+                        fontWeight: FontWeight.w500,
                         color: StyleHelper.statusColor(item.status),
                       ),
                     ),
@@ -331,6 +383,7 @@ class _HomePageState extends State<HomePage> {
                       '${item.progress} sent',
                       style: TextStyle(
                         fontSize: 12.0,
+                        fontWeight: FontWeight.w600,
                         color: StyleHelper.statusColor(item.status),
                       ),
                     ),
