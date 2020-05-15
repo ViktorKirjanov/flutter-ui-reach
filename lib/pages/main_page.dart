@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:login_and_dashboard/pages/_widgets/alert_dialog.dart';
-import 'package:login_and_dashboard/pages/home_page.dart';
+import 'package:login_and_dashboard/pages/home_page/home_page.dart';
 import 'package:login_and_dashboard/pages/management_page.dart';
 import 'package:login_and_dashboard/pages/profile_page.dart';
 import 'package:login_and_dashboard/pages/report_page.dart';
@@ -96,6 +96,7 @@ class _MainPageState extends State<MainPage> {
     bool notifications = false,
   }) {
     return Container(
+      margin: EdgeInsets.only(top: 10.0),
       width: 40.0,
       height: 35.0,
       child: Stack(
@@ -133,6 +134,7 @@ class _MainPageState extends State<MainPage> {
     return Theme(
       data: new ThemeData(splashFactory: const NoSplashFactory()),
       child: new Container(
+        margin: EdgeInsets.only(top: 10.0),
         width: 52.0,
         height: 52.0,
         decoration: new BoxDecoration(
@@ -149,11 +151,7 @@ class _MainPageState extends State<MainPage> {
             ),
           ],
         ),
-        child: Icon(
-          Icons.add,
-          size: 30.0,
-          color: Colors.white,
-        ),
+        child: Image.asset('assets/icons/add.png'),
       ),
     );
   }

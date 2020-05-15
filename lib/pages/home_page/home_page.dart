@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:login_and_dashboard/core/blocs/selected_chart_bar_bloc/selected_chart_bar_bloc.dart';
 import 'package:login_and_dashboard/core/data/queue.dart';
 import 'package:login_and_dashboard/core/enums/queue_item_status_enum.dart';
 import 'package:login_and_dashboard/core/enums/queue_item_type_enum.dart';
 import 'package:login_and_dashboard/core/helpers/style_helper.dart';
 import 'package:login_and_dashboard/core/models/queue_item_model.dart';
+import 'package:login_and_dashboard/pages/home_page/_widgets/chart.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key key}) : super(key: key);
@@ -13,6 +16,20 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  var _duration = [
+    "Daily",
+    "Weekly",
+    "Monthly",
+  ];
+
+  var _currentSelectedValue = "Weekly";
+
+  @override
+  void initState() {
+    super.initState();
+    BlocProvider.of<SelectedChartBarBloc>(context).add(ResetChartBarEvent());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +60,7 @@ class _HomePageState extends State<HomePage> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.only(left: 2.0),
+          padding: const EdgeInsets.only(left: 1.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -233,25 +250,59 @@ class _HomePageState extends State<HomePage> {
                 color: Color.fromRGBO(41, 34, 84, 1.0),
               ),
             ),
-            Container(
-              width: 100.0,
-              height: 36.0,
-              color: Colors.white,
-            )
+            _buildDropDown(),
           ],
         ),
         SizedBox(height: 16.0),
-        Container(
-          height: 230.0,
-          width: double.infinity,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.all(
-              Radius.circular(10.0),
-            ),
-          ),
-        ),
+        Chart(),
       ],
+    );
+  }
+
+  Widget _buildDropDown() {
+    return Container(
+      width: 105.0,
+      height: 36.0,
+      padding: EdgeInsets.only(left: 15.0),
+      decoration: BoxDecoration(
+        color: Colors.transparent,
+        borderRadius: BorderRadius.all(
+          Radius.circular(10.0),
+        ),
+        border: Border.all(
+          color: Color.fromRGBO(224, 222, 234, 1),
+          width: 1.0,
+        ),
+      ),
+      child: DropdownButtonHideUnderline(
+        child: DropdownButton<String>(
+          icon: Container(
+            padding: EdgeInsets.only(right: 17.0),
+            child: Image.asset('assets/icons/drop_down.png'),
+          ),
+          value: _currentSelectedValue,
+          isDense: true,
+          onChanged: (String newValue) {
+            setState(() {
+              _currentSelectedValue = newValue;
+            });
+          },
+          items: _duration.map((String value) {
+            return DropdownMenuItem<String>(
+              value: value,
+              child: Text(
+                value,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 14.0,
+                  fontWeight: FontWeight.w500,
+                  color: Color.fromRGBO(41, 34, 84, 1.0),
+                ),
+              ),
+            );
+          }).toList(),
+        ),
+      ),
     );
   }
 
@@ -261,7 +312,7 @@ class _HomePageState extends State<HomePage> {
       queueItemlist.add(
         _buildInkWellWrapper(child: _buildQueueItemContent(item)),
       );
-      queueItemlist.add(SizedBox(height: 10.0));
+      queueItemlist.add(SizedBox(height: 14.0));
     });
 
     return Column(
