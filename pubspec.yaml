@@ -63,6 +63,7 @@ flutter:
    - assets/icons/logo.png
    - assets/icons/drop_down.png
    - assets/icons/add.png
+   - assets/icons/back.png
    - assets/bg.png
 
   # An image asset can refer to one or more resolution-specific "variants", see

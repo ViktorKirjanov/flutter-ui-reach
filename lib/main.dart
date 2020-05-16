@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         fontFamily: 'Inter',
+        primaryColor: Color.fromRGBO(224, 222, 234, 1),
         accentColor: Color.fromRGBO(204, 61, 106, 1),
       ),
       home: InitPage(),

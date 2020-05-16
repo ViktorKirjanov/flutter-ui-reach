@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../_widgets/action_button.dart';
+import '../demo_page.dart';
 import '../main_page.dart';
+import '../signin_page.dart';
 import '_widgets/logo.dart';
 import '_widgets/welcome.dart';
 
@@ -44,7 +46,7 @@ class _InitPageState extends State<InitPage> {
                     action: () =>
                         Navigator.of(context, rootNavigator: true).push(
                       MaterialPageRoute<bool>(
-                        builder: (BuildContext context) => MainPage(),
+                        builder: (BuildContext context) => SigninPage(),
                       ),
                     ),
                   ),
@@ -57,7 +59,7 @@ class _InitPageState extends State<InitPage> {
                     action: () =>
                         Navigator.of(context, rootNavigator: true).push(
                       MaterialPageRoute<bool>(
-                        builder: (BuildContext context) => MainPage(),
+                        builder: (BuildContext context) => FormDemo(),
                       ),
                     ),
                   ),
