@@ -137,7 +137,7 @@ class _HomePageState extends State<HomePage> {
     @required int count,
   }) {
     return Container(
-      padding: EdgeInsets.all(14.0),
+      padding: EdgeInsets.fromLTRB(14.0, 14.0, 14.0, 0.0),
       height: 123.0,
       width: double.infinity,
       decoration: BoxDecoration(
@@ -348,7 +348,6 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildInkWellWrapper({@required Widget child}) {
     return Container(
-      // margin: EdgeInsets.only(bottom: 10),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(
@@ -375,7 +374,6 @@ class _HomePageState extends State<HomePage> {
   Widget _buildQueueItemContent(QueueItem item) {
     return Container(
       padding: EdgeInsets.all(14.0),
-      height: 85.0,
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.all(

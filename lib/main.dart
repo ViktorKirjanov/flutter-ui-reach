@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:login_and_dashboard/core/blocs/selected_chart_bar_bloc/selected_chart_bar_bloc.dart';
-import 'package:login_and_dashboard/pages/main_page.dart';
+import 'package:login_and_dashboard/pages/init_page/init_page.dart';
 
 void main() => runApp(
       MultiBlocProvider(
@@ -20,10 +20,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
         fontFamily: 'Inter',
+        accentColor: Color.fromRGBO(204, 61, 106, 1),
       ),
-      home: MainPage(),
+      home: InitPage(),
     );
   }
 }

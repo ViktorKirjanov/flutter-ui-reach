@@ -96,7 +96,7 @@ class _MainPageState extends State<MainPage> {
     bool notifications = false,
   }) {
     return Container(
-      margin: EdgeInsets.only(top: 10.0),
+      // margin: EdgeInsets.only(top: 10.0),
       width: 40.0,
       height: 35.0,
       child: Stack(
@@ -134,7 +134,7 @@ class _MainPageState extends State<MainPage> {
     return Theme(
       data: new ThemeData(splashFactory: const NoSplashFactory()),
       child: new Container(
-        margin: EdgeInsets.only(top: 10.0),
+        margin: EdgeInsets.only(top: 10.0, bottom: 10.0),
         width: 52.0,
         height: 52.0,
         decoration: new BoxDecoration(
@@ -145,7 +145,7 @@ class _MainPageState extends State<MainPage> {
           boxShadow: [
             BoxShadow(
               color: Color.fromRGBO(204, 61, 106, .2),
-              spreadRadius: 5,
+              spreadRadius: 0,
               blurRadius: 14,
               offset: Offset(0.0, 6.0),
             ),
