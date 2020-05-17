@@ -7,6 +7,7 @@ import 'package:login_and_dashboard/pages/_widgets/loading_button.dart';
 import 'package:login_and_dashboard/pages/main_page.dart';
 
 import '_widgets/action_button.dart';
+import 'init_page/_widgets/background.dart';
 
 class SigninPage extends StatefulWidget {
   SigninPage({Key key}) : super(key: key);
@@ -90,14 +91,7 @@ class _SigninPageState extends State<SigninPage>
       body: Container(
         child: Stack(
           children: <Widget>[
-            Positioned(
-              top: -315,
-              child: Container(
-                padding: EdgeInsets.only(bottom: 315),
-                width: MediaQuery.of(context).size.width,
-                child: Image.asset('assets/bg.png'),
-              ),
-            ),
+            Background(animation: false),
             Positioned(
               top: 56,
               left: 17,

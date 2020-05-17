@@ -3,6 +3,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class Background extends StatefulWidget {
+  final bool animation;
+
+  const Background({Key key, this.animation = true}) : super(key: key);
+
   @override
   _BackgroundState createState() => _BackgroundState();
 }
@@ -29,7 +33,7 @@ class _BackgroundState extends State<Background> {
   @override
   void initState() {
     super.initState();
-    _timer = Timer(Duration(milliseconds: 1000), () {
+    _timer = Timer(Duration(milliseconds: (widget.animation) ? 1000 : 0), () {
       setState(() {
         r1Height = cellSize * 0.6;
         r2Height = cellSize * 0.57;
@@ -40,7 +44,7 @@ class _BackgroundState extends State<Background> {
       });
     });
 
-    _timer2 = Timer(Duration(milliseconds: 2000), () {
+    _timer2 = Timer(Duration(milliseconds: (widget.animation) ? 2000 : 0), () {
       setState(() {
         circle22Size = r2Height;
         circle31Size = r3Height;
