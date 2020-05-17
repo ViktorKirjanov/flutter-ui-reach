@@ -8,14 +8,14 @@ import 'package:login_and_dashboard/pages/main_page.dart';
 
 import '_widgets/action_button.dart';
 
-class SigninPage extends StatefulWidget {
-  SigninPage({Key key}) : super(key: key);
+class SignupPage extends StatefulWidget {
+  SignupPage({Key key}) : super(key: key);
 
   @override
-  _SigninPageState createState() => _SigninPageState();
+  _SignupPageState createState() => _SignupPageState();
 }
 
-class _SigninPageState extends State<SigninPage>
+class _SignupPageState extends State<SignupPage>
     with SingleTickerProviderStateMixin {
   ProgressButtonBloc _signInProgressButtonBloc;
 
@@ -236,7 +236,7 @@ class _SigninPageState extends State<SigninPage>
           builder: (context, state) {
             if (state is EnabledProgressButtonState) {
               return ActionButton(
-                title: 'Sign In',
+                title: 'Sign Up',
                 textColor: Colors.white,
                 backgroundColor: Color.fromRGBO(204, 61, 106, 1),
                 action: () {

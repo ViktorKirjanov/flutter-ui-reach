@@ -37,7 +37,7 @@ class _WelcomeState extends State<Welcome> {
   Widget build(BuildContext context) {
     return AnimatedPositioned(
       left: _left,
-      bottom: 315,
+      bottom: 42.0,
       duration: Duration(milliseconds: _duration),
       curve: Curves.fastOutSlowIn,
       child: AnimatedOpacity(
@@ -46,7 +46,6 @@ class _WelcomeState extends State<Welcome> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            SizedBox(height: 101.0),
             Text(
               'Welcome \nto Reach',
               style: TextStyle(
@@ -66,7 +65,6 @@ class _WelcomeState extends State<Welcome> {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(height: 42.0),
           ],
         ),
       ),

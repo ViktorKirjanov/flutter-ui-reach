@@ -96,7 +96,6 @@ class _MainPageState extends State<MainPage> {
     bool notifications = false,
   }) {
     return Container(
-      // margin: EdgeInsets.only(top: 10.0),
       width: 40.0,
       height: 35.0,
       child: Stack(

@@ -7,6 +7,9 @@ class ActionButton extends StatelessWidget {
   final Color textColor;
   final Color backgroundColor;
   final bool borderSide;
+  final double fontSize;
+  final double letterSpacing;
+  final FontWeight fontWeight;
 
   const ActionButton({
     this.valueKey,
@@ -15,6 +18,9 @@ class ActionButton extends StatelessWidget {
     @required this.textColor,
     @required this.backgroundColor,
     this.borderSide = false,
+    this.fontSize = 18.0,
+    this.letterSpacing = 0.02,
+    this.fontWeight = FontWeight.w600,
   });
 
   @override
@@ -41,9 +47,9 @@ class ActionButton extends StatelessWidget {
         child: Text(
           title,
           style: TextStyle(
-            fontSize: 18.0,
-            letterSpacing: 0.02,
-            fontWeight: FontWeight.w600,
+            fontSize: fontSize,
+            letterSpacing: letterSpacing,
+            fontWeight: fontWeight,
             color: textColor,
           ),
         ),
