@@ -33,14 +33,6 @@ class _InitPageState extends State<InitPage> {
               height: topHeight,
               child: Stack(
                 children: <Widget>[
-                  // Positioned(
-                  //   bottom: 315,
-                  //   child: Container(
-                  //     color: Colors.yellowAccent,
-                  //     width: MediaQuery.of(context).size.width,
-                  //     child: Image.asset('assets/bg.png'),
-                  //   ),
-                  // ),
                   Background(),
                   Welcome(),
                 ],
