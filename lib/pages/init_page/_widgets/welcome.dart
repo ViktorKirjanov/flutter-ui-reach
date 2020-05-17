@@ -3,6 +3,10 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class Welcome extends StatefulWidget {
+  final double bottomPadding;
+
+  const Welcome({Key key, this.bottomPadding}) : super(key: key);
+
   @override
   _WelcomeState createState() => _WelcomeState();
 }
@@ -37,7 +41,7 @@ class _WelcomeState extends State<Welcome> {
   Widget build(BuildContext context) {
     return AnimatedPositioned(
       left: _left,
-      bottom: 42.0,
+      bottom: widget.bottomPadding + 42.0,
       duration: Duration(milliseconds: _duration),
       curve: Curves.fastOutSlowIn,
       child: AnimatedOpacity(

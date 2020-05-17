@@ -21,7 +21,11 @@ class _InitPageState extends State<InitPage> {
     final double h = MediaQuery.of(context).size.height;
     final double cellSize = w / 3;
     final topHeight = cellSize * (0.6 + 0.57 + 0.43 + 0.6 + 1 + 0.4);
-    final bottomHeight = h - topHeight;
+    double bottomHeight = h - topHeight;
+
+    if (bottomHeight < 315) {
+      bottomHeight = 315;
+    }
 
     return Scaffold(
       backgroundColor: Color.fromRGBO(204, 61, 106, 1),
@@ -29,15 +33,8 @@ class _InitPageState extends State<InitPage> {
         height: double.infinity,
         child: Stack(
           children: <Widget>[
-            Container(
-              height: topHeight,
-              child: Stack(
-                children: <Widget>[
-                  Background(),
-                  Welcome(),
-                ],
-              ),
-            ),
+            Background(),
+            Welcome(bottomPadding: bottomHeight),
             Logo(),
             _buildButtons(bottomHeight),
           ],
@@ -50,6 +47,7 @@ class _InitPageState extends State<InitPage> {
     return Positioned(
       bottom: 0,
       child: Container(
+        color: Color.fromRGBO(204, 61, 106, 1),
         padding: EdgeInsets.symmetric(horizontal: 30.0),
         height: height,
         width: MediaQuery.of(context).size.width,
