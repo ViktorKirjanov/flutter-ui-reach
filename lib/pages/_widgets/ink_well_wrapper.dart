@@ -15,9 +15,9 @@ class InkWellWrapper extends StatelessWidget {
           Radius.circular(10.0),
         ),
       ),
-      child: new Material(
+      child: Material(
         color: Colors.transparent,
-        child: new InkWell(
+        child: InkWell(
           borderRadius: BorderRadius.all(
             Radius.circular(10.0),
           ),

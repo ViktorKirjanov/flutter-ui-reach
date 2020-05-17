@@ -131,14 +131,14 @@ class _MainPageState extends State<MainPage> {
 
   Widget _buildMiddleMenuItem() {
     return Theme(
-      data: new ThemeData(splashFactory: const NoSplashFactory()),
-      child: new Container(
+      data: ThemeData(splashFactory: const NoSplashFactory()),
+      child: Container(
         margin: EdgeInsets.only(top: 10.0, bottom: 10.0),
         width: 52.0,
         height: 52.0,
-        decoration: new BoxDecoration(
+        decoration: BoxDecoration(
           color: Color.fromRGBO(204, 61, 106, 1),
-          borderRadius: new BorderRadius.all(
+          borderRadius: BorderRadius.all(
             Radius.circular(20.0),
           ),
           boxShadow: [
